@@ -137,7 +137,14 @@
                     </tr>
                 </thead>
                 <tbody>
-
+                    @if ($allMember->count() == 0)
+                        <tr
+                            class="bg-white border-b text-center dark:bg-gray-800 dark:border-gray-700 border-gray-200 hover:bg-gray-50 dark:hover:bg-gray-600">
+                            <td colspan="7" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                Data tidak ditemukan
+                            </td>
+                        </tr>
+                    @endif
                     @foreach ($allMember as $member)
                         <tr
                             class="bg-white border-b text-center dark:bg-gray-800 dark:border-gray-700 border-gray-200 hover:bg-gray-50 dark:hover:bg-gray-600">
