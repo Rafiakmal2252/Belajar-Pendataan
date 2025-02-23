@@ -24,7 +24,7 @@ class AuthenticationController extends Controller
         if (Auth::attempt($credentials)) {
             $request->session()->regenerate();
 
-            return redirect()->route('member.index');
+            return redirect()->route('dashboard.index');
         }
 
         return redirect()->back()->with([

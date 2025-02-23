@@ -73,6 +73,14 @@ class MemberController extends Controller implements HasMiddleware
             "nis" => "required|numeric|digits:5",
         ]);
 
+        $member = Member::where('id_rohis', $request->id_rohis)->first();
+
+        if ($member != null) {
+            return redirect()->back()->with([
+                'message' => 'NIS sudah terdaftar'
+            ]);
+        }
+
         $data = [ ...$request->all(), 
         'created_by' => Auth::id() ];
 

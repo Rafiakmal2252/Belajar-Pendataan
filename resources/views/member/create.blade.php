@@ -11,7 +11,7 @@
                         <path
                             d="m19.707 9.293-2-2-7-7a1 1 0 0 0-1.414 0l-7 7-2 2a1 1 0 0 0 1.414 1.414L2 10.414V18a2 2 0 0 0 2 2h3a1 1 0 0 0 1-1v-4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v4a1 1 0 0 0 1 1h3a2 2 0 0 0 2-2v-7.586l.293.293a1 1 0 0 0 1.414-1.414Z" />
                     </svg>
-                    Home Page
+                    Data Anggota
                 </a>
             </li>
             <li>
@@ -22,8 +22,7 @@
                             d="m1 9 4-4-4-4" />
                     </svg>
                     <a href="{{ route('member.create') }}"
-                        class="ms-1 text-sm font-medium text-gray-700 hover:text-blue-600 md:ms-2 dark:text-gray-400 dark:hover:text-white">Create
-                        Page</a>
+                        class="ms-1 text-sm font-medium text-gray-700 hover:text-blue-600 md:ms-2 dark:text-gray-400 dark:hover:text-white">Halaman Buat</a>
                 </div>
             </li>
         </ol>
@@ -33,7 +32,8 @@
         @csrf
         <div class="grid gap-6 mb-6 md:grid-cols-2">
             <div>
-                <label for="id_rohis" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">ID Rohis</label>
+                <label for="id_rohis" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">ID
+                    Rohis</label>
                 <input type="text" id="id_rohis" name="id_rohis"
                     class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" />
 
@@ -55,8 +55,16 @@
             <div>
                 <label for="division"
                     class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Divisi</label>
-                <input type="text" id="division" name="division"
-                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" />
+                <select id="small" name="division"
+                    class="w-full p-2 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                    <option value="">Pilih Divisi</option>
+                    <option value="Takmir">Takmir</option>
+                    <option value="Annisa">Annisa</option>
+                    <option value="Humas">Humas</option>
+                    <option value="Kaderisasi">Kaderisasi</option>
+                    <option value="Dakwah">Dakwah</option>
+                    <option value="Kesenian">Kesenian</option>
+                </select>
 
                 @error('division')
                     <p style="color: red;">{{ $message }}</p>
